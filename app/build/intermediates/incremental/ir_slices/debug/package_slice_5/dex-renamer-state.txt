@@ -1,4 +1,4 @@
-#Mon Jun 17 00:15:45 IST 2019
-base.0=F\:\\QSTPAppd\\Calculator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\24
+#Mon Jun 17 16:19:14 IST 2019
+base.0=F\:\\QSTPAppd\\Calculator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\43
 path.0=classes.dex
 renamed.0=classes.dex

@@ -33,6 +33,153 @@ public class MainActivity extends AppCompatActivity {
     public void onClkeql(View view) {
         operate(inp);
     }
+    public void operate(String c){
+        n1="";
+        n2="";
+        int i,j;
+        int a=c.indexOf("/");
+        if(a!=-1)
+        {
+            for (i=a+1;i<c.length();i++)
+            {
+                b=c.charAt(i);
+                if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                    break;
+                else
+                    n2=n2+b;
+            }
+            for (j=a-1;j>=0;j--)
+            {
+                b=c.charAt(j);
+                if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                    break;
+                else
+                    n1=n1+b;
+            }
+            num1=Float.parseFloat(n1);
+            num2=Float.parseFloat(n2);
+            result=num1/num2;
+            if((j<0)&&(i<c.length()))
+                c=Float.toString(result).concat(c.substring(i));
+            else if ((j>0)&&(i<c.length()))
+                c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+            else if ((j<0)&&(i==c.length()))
+                c=Float.toString(result);
+            else
+                c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+            operate(c);
+        }
+        else
+        {
+            a=c.indexOf("X");
+            if(a!=-1)
+            {
+                for (i=a+1;i<c.length();i++)
+                {
+                    b=c.charAt(i);
+                    if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                        break;
+                    else
+                        n2=n2+b;
+                }
+                for (j=a-1;j>=0;j--)
+                {
+                    b=c.charAt(j);
+                    if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                        break;
+                    else
+                        n1=n1+b;
+                }
+                num1=Float.parseFloat(n1);
+                num2=Float.parseFloat(n2);
+                result=num1*num2;
+                if((j<0)&&(i<c.length()))
+                    c=Float.toString(result).concat(c.substring(i));
+                else if ((j>0)&&(i<c.length()))
+                    c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                else if ((j<0)&&(i==c.length()))
+                    c=Float.toString(result);
+                else
+                    c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                operate(c);
+            }
+            else
+            {
+                a=c.indexOf("+");
+                if(a!=-1)
+                {
+                    for (i=a+1;i<c.length();i++)
+                    {
+                        b=c.charAt(i);
+                        if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                            break;
+                        else
+                            n2=n2+b;
+                    }
+                    for (j=a-1;j>=0;j--)
+                    {
+                        b=c.charAt(j);
+                        if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                            break;
+                        else
+                            n1=n1+b;
+                    }
+                    num1=Float.parseFloat(n1);
+                    num2=Float.parseFloat(n2);
+                    result=num1+num2;
+                    if((j<0)&&(i<c.length()))
+                        c=Float.toString(result).concat(c.substring(i));
+                    else if ((j>0)&&(i<c.length()))
+                        c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                    else if ((j<0)&&(i==c.length()))
+                        c=Float.toString(result);
+                    else
+                        c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                    operate(c);
+                }
+                else
+                {
+                    a=c.indexOf("-");
+                    if(a!=-1)
+                    {
+                        for (i=a+1;i<c.length();i++)
+                        {
+                            b=c.charAt(i);
+                            if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                                break;
+                            else
+                                n2=n2+b;
+                        }
+                        for (j=a-1;j>=0;j--)
+                        {
+                            b=c.charAt(j);
+                            if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
+                                break;
+                            else
+                                n1=n1+b;
+                        }
+                        num1=Float.parseFloat(n1);
+                        num2=Float.parseFloat(n2);
+                        result=num1-num2;
+                        if((j<0)&&(i<c.length()))
+                            c=Float.toString(result).concat(c.substring(i));
+                        else if ((j>0)&&(i<c.length()))
+                            c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                        else if ((j<0)&&(i==c.length()))
+                            c=Float.toString(result);
+                        else
+                            c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                        operate(c);
+                    }
+                    else
+                    {
+                        input.setText("");
+                        output.setText(c);
+                    }
+                }
+            }
+        }
+    }
 
     public void onClkdot(View view) {
         a=dot.getText().toString();
@@ -131,124 +278,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClkclear(View view) {
         input.setText("");
+        output.setText("");
     }
 
-    public void operate(String c){
-        int i,j;
-        int a=c.indexOf("/");
-        if(a!=-1)
-        {
-            for (i=a+1;i<c.length();i++)
-            {
-                b=c.charAt(i);
-                if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                    n2=n2+b;
-                else
-                    break;
-            }
-            for (j=a-1;j>=0;j--)
-            {
-                b=c.charAt(j);
-                if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                    n1=n1+b;
-                else
-                    break;
-            }
-            num1=Integer.parseInt(n1);
-            num2=Integer.parseInt(n2);
-            result=num1/num2;
-            c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
-            output.setText(c);
-            //operate(c);
-        }
-        /*else
-        {
-            a=c.indexOf("X");
-            if(a!=-1)
-            {
-                for (i=a+1;i<c.length();i++)
-                {
-                    b=c.charAt(i);
-                    if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                        n2=n2+b;
-                    else
-                        break;
-                }
-                for (j=a-1;j>=0;j--)
-                {
-                    b=c.charAt(j);
-                    if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                        n1=n1+b;
-                    else
-                        break;
-                }
-                num1=Float.parseFloat(n1);
-                num2=Float.parseFloat(n2);
-                result=num1*num2;
-                c=c.substring(0,i+1).concat(Float.toString(result)).concat(c.substring(j));
-                operate(c);
-            }
-            else
-            {
-                a=c.indexOf("+");
-                if(a!=-1)
-                {
-                    for (i=a+1;i<c.length();i++)
-                    {
-                        b=c.charAt(i);
-                        if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                            n2=n2+b;
-                        else
-                            break;
-                    }
-                    for (j=a-1;j>=0;j--)
-                    {
-                        b=c.charAt(j);
-                        if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                            n1=n1+b;
-                        else
-                            break;
-                    }
-                    num1=Float.parseFloat(n1);
-                    num2=Float.parseFloat(n2);
-                    result=num1+num2;
-                    c=c.substring(0,i+1).concat(Float.toString(result)).concat(c.substring(j));
-                    operate(c);
-                }
-                else
-                {
-                    a=c.indexOf("-");
-                    if(a!=-1)
-                    {
-                        for (i=a+1;i<c.length();i++)
-                        {
-                            b=c.charAt(i);
-                            if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                                n2=n2+b;
-                            else
-                                break;
-                        }
-                        for (j=a-1;j>=0;j--)
-                        {
-                            b=c.charAt(j);
-                            if((b!='X')||(b!='+')||(b!='-')||(b!='/'))
-                                n1=n1+b;
-                            else
-                                break;
-                        }
-                        num1=Float.parseFloat(n1);
-                        num2=Float.parseFloat(n2);
-                        result=num1-num2;
-                        c=c.substring(0,i+1).concat(Float.toString(result)).concat(c.substring(j));
-                        operate(c);
-                    }
-                    else
-                    {
-                        input.setText("");
-                        output.setText(c);
-                    }
-                }
-            }
-        }*/
-    }
 }
