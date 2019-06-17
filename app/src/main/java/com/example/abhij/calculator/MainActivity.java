@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
                     break;
                 else
-                    n1=n1+b;
+                    n1=b+n1;
             }
             num1=Float.parseFloat(n1);
             num2=Float.parseFloat(n2);
@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
             if((j<0)&&(i<c.length()))
                 c=Float.toString(result).concat(c.substring(i));
             else if ((j>0)&&(i<c.length()))
-                c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
             else if ((j<0)&&(i==c.length()))
                 c=Float.toString(result);
             else
-                c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
             operate(c);
         }
         else
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
                         break;
                     else
-                        n1=n1+b;
+                        n1=b+n1;
                 }
                 num1=Float.parseFloat(n1);
                 num2=Float.parseFloat(n2);
@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 if((j<0)&&(i<c.length()))
                     c=Float.toString(result).concat(c.substring(i));
                 else if ((j>0)&&(i<c.length()))
-                    c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                    c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                 else if ((j<0)&&(i==c.length()))
                     c=Float.toString(result);
                 else
-                    c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                    c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                 operate(c);
             }
             else
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
                             break;
                         else
-                            n1=n1+b;
+                            n1=b+n1;
                     }
                     num1=Float.parseFloat(n1);
                     num2=Float.parseFloat(n2);
@@ -130,11 +130,11 @@ public class MainActivity extends AppCompatActivity {
                     if((j<0)&&(i<c.length()))
                         c=Float.toString(result).concat(c.substring(i));
                     else if ((j>0)&&(i<c.length()))
-                        c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                        c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                     else if ((j<0)&&(i==c.length()))
                         c=Float.toString(result);
                     else
-                        c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                        c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                     operate(c);
                 }
                 else
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                             if((b=='X')||(b=='+')||(b=='-')||(b=='/'))
                                 break;
                             else
-                                n1=n1+b;
+                                n1=b+n1;
                         }
                         num1=Float.parseFloat(n1);
                         num2=Float.parseFloat(n2);
@@ -164,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
                         if((j<0)&&(i<c.length()))
                             c=Float.toString(result).concat(c.substring(i));
                         else if ((j>0)&&(i<c.length()))
-                            c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                            c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                         else if ((j<0)&&(i==c.length()))
                             c=Float.toString(result);
                         else
-                            c=c.substring(0,j).concat(Float.toString(result)).concat(c.substring(i));
+                            c=c.substring(0,j+1).concat(Float.toString(result)).concat(c.substring(i));
                         operate(c);
                     }
                     else
